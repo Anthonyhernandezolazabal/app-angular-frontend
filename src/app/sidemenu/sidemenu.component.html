@@ -178,6 +178,10 @@
 				<li [class.active]="base === 'index'">
 					<a [routerLink]="'/index'"><i data-feather="home"></i> <span>Dashboard</span></a>
 				</li>
+        <li [class.active]="base === 'gestion-inquilinos'">
+					<a [routerLink]="'/gestion-inquilinos'"><i data-feather="users"></i> <span>Inquilinos</span></a>
+
+        </li>
 				<li [class.active]="base === 'customers'">
 					<a [routerLink]="'/customers/customers-list'"><i data-feather="users"></i> <span>Customers</span></a>
 				</li>
@@ -234,7 +238,7 @@
 							</a>
 						</li>
 						<li>
-							<a 
+							<a
 							[routerLink]="'/blog/add-blogs'"
 							[class.active] = "base === 'blog' && page === 'add-blogs'">
 							Add Blog
@@ -302,9 +306,9 @@
 				<!-- <li [class.active]="base === 'components'">
 					<a [routerLink]="'components'"><i data-feather="layers"></i> <span>Components</span></a>
 				</li> -->
-				<li class="submenu" 
-				[class.active] = "base === 'basic-ui' || 
-								  base === 'base-ui' && page === 'alerts' || 
+				<li class="submenu"
+				[class.active] = "base === 'basic-ui' ||
+								  base === 'base-ui' && page === 'alerts' ||
 								  base === 'base-ui' && page === 'accordions' ||
 								  base === 'base-ui' && page === 'avatar' ||
 								  base === 'base-ui' && page === 'badges' ||
@@ -336,213 +340,213 @@
 				<a href="javascript:void(0)"><i class="fab fa-get-pocket"></i> <span>Base UI </span> <span class="menu-arrow"></span></a>
 				<ul>
 					<li>
-						<a 
-							[routerLink]="'base-ui/alerts'" 
+						<a
+							[routerLink]="'base-ui/alerts'"
 								[class.active] = "base === 'base-ui' && page === 'alerts'">
 							Alerts
 						</a>
-					</li>                                    
+					</li>
 					<li>
-						<a 
-							[routerLink]="'base-ui/accordions'" 
+						<a
+							[routerLink]="'base-ui/accordions'"
 								[class.active] = "base === 'base-ui' && page === 'accordions'">
 							Accordions
 						</a>
 					</li>
 					<li>
-						<a 
-							[routerLink]="'base-ui/avatar'" 
+						<a
+							[routerLink]="'base-ui/avatar'"
 								[class.active] = "base === 'base-ui' && page === 'avatar'">
 							Avatar
 						</a>
-					</li> 
+					</li>
 					<li>
-						<a 
-							[routerLink]="'base-ui/badges'" 
+						<a
+							[routerLink]="'base-ui/badges'"
 								[class.active] = "base === 'base-ui' && page === 'badges'">
 							Badges
 						</a>
-					</li> 
+					</li>
 					<li>
-						<a 
-							[routerLink]="'base-ui/buttons'" 
+						<a
+							[routerLink]="'base-ui/buttons'"
 								[class.active] = "base === 'base-ui' && page === 'buttons'">
 							Buttons
 						</a>
-					</li> 
+					</li>
 					<li>
-						<a 
-							[routerLink]="'base-ui/button-group'" 
+						<a
+							[routerLink]="'base-ui/button-group'"
 								[class.active] = "base === 'base-ui' && page === 'button-group'">
 							Button Group
 						</a>
-					</li>                                   
+					</li>
 					<li>
-						<a 
-							[routerLink]="'base-ui/breadcrumb'" 
+						<a
+							[routerLink]="'base-ui/breadcrumb'"
 								[class.active] = "base === 'base-ui' && page === 'breadcrumb'">
 							Breadcrumb
 						</a>
-					</li>   
+					</li>
 					<li>
-						<a 
-							[routerLink]="'base-ui/cards'" 
+						<a
+							[routerLink]="'base-ui/cards'"
 								[class.active] = "base === 'base-ui' && page === 'cards'">
 							Cards
 						</a>
-					</li>   
+					</li>
 					<li>
-						<a 
-							[routerLink]="'base-ui/carousel'" 
+						<a
+							[routerLink]="'base-ui/carousel'"
 								[class.active] = "base === 'base-ui' && page === 'carousel'">
 							Carousel
 						</a>
-					</li>                                   
+					</li>
 					<li>
-						<a 
-							[routerLink]="'base-ui/dropdowns'" 
+						<a
+							[routerLink]="'base-ui/dropdowns'"
 								[class.active] = "base === 'base-ui' && page === 'dropdowns'">
 							Dropdowns
 						</a>
-					</li>     
+					</li>
 					<li>
-						<a 
-							[routerLink]="'base-ui/grid'" 
+						<a
+							[routerLink]="'base-ui/grid'"
 								[class.active] = "base === 'base-ui' && page === 'grid'">
 							Grid
 						</a>
-					</li>     
+					</li>
 					<li>
-						<a 
-							[routerLink]="'base-ui/images'" 
+						<a
+							[routerLink]="'base-ui/images'"
 								[class.active] = "base === 'base-ui' && page === 'images'">
 							Images
 						</a>
-					</li>  
+					</li>
 					<li>
-						<a 
-							[routerLink]="'base-ui/lightbox'" 
+						<a
+							[routerLink]="'base-ui/lightbox'"
 								[class.active] = "base === 'base-ui' && page === 'lightbox'">
 							Lightbox
 						</a>
 					</li>
 					<li>
-						<a 
-							[routerLink]="'base-ui/media'" 
+						<a
+							[routerLink]="'base-ui/media'"
 								[class.active] = "base === 'base-ui' && page === 'media'">
 							Media
 						</a>
-					</li>                 
+					</li>
 					<li>
-						<a 
-							[routerLink]="'base-ui/modals'" 
+						<a
+							[routerLink]="'base-ui/modals'"
 								[class.active] = "base === 'base-ui' && page === 'modals'">
 							Modals
 						</a>
-					</li> 
+					</li>
 					<li>
-						<a 
-							[routerLink]="'base-ui/offcanvas'" 
+						<a
+							[routerLink]="'base-ui/offcanvas'"
 								[class.active] = "base === 'base-ui' && page === 'offcanvas'">
 							Offcanvas
 						</a>
-					</li> 
+					</li>
 					<li>
-						<a 
-							[routerLink]="'base-ui/pagination'" 
+						<a
+							[routerLink]="'base-ui/pagination'"
 								[class.active] = "base === 'base-ui' && page === 'pagination'">
 							Pagination
 						</a>
-					</li> 
+					</li>
 					<li>
-						<a 
-							[routerLink]="'base-ui/popover'" 
+						<a
+							[routerLink]="'base-ui/popover'"
 								[class.active] = "base === 'base-ui' && page === 'popover'">
 							Popover
 						</a>
-					</li>                      
+					</li>
 					<li>
-						<a 
-							[routerLink]="'base-ui/progress-bars'" 
+						<a
+							[routerLink]="'base-ui/progress-bars'"
 								[class.active] = "base === 'base-ui' && page === 'progress-bars'">
 							Progress Bars
 						</a>
-					</li>   
+					</li>
 					<li>
-						<a 
-							[routerLink]="'base-ui/placeholders'" 
+						<a
+							[routerLink]="'base-ui/placeholders'"
 								[class.active] = "base === 'base-ui' && page === 'placeholders'">
 							Placeholders
 						</a>
-					</li> 
+					</li>
 					<li>
-						<a 
-							[routerLink]="'base-ui/rangeslider'" 
+						<a
+							[routerLink]="'base-ui/rangeslider'"
 								[class.active] = "base === 'base-ui' && page === 'rangeslider'">
 							Range Slider
 						</a>
-					</li>                                  
+					</li>
 					<li>
-						<a 
-							[routerLink]="'base-ui/spinner'" 
+						<a
+							[routerLink]="'base-ui/spinner'"
 								[class.active] = "base === 'base-ui' && page === 'spinner'">
 							Spinner
 						</a>
-					</li>  
+					</li>
 					<li>
-						<a 
-							[routerLink]="'base-ui/sweetalerts'" 
+						<a
+							[routerLink]="'base-ui/sweetalerts'"
 								[class.active] = "base === 'base-ui' && page === 'sweetalerts'">
 							Sweetalerts
 						</a>
-					</li>  
+					</li>
 					<li>
-						<a 
-							[routerLink]="'base-ui/tabs'" 
+						<a
+							[routerLink]="'base-ui/tabs'"
 								[class.active] = "base === 'base-ui' && page === 'tabs'">
 							Tabs
 						</a>
-					</li>  
+					</li>
 					<li>
-						<a 
-							[routerLink]="'base-ui/toasts'" 
+						<a
+							[routerLink]="'base-ui/toasts'"
 								[class.active] = "base === 'base-ui' && page === 'toasts'">
 							Toasts
 						</a>
-					</li>  
+					</li>
 					<li>
-						<a 
-							[routerLink]="'base-ui/tooltip'" 
+						<a
+							[routerLink]="'base-ui/tooltip'"
 								[class.active] = "base === 'base-ui' && page === 'tooltip'">
 							Tooltip
 						</a>
-					</li>  
+					</li>
 					<li>
-						<a 
-							[routerLink]="'base-ui/typography'" 
+						<a
+							[routerLink]="'base-ui/typography'"
 								[class.active] = "base === 'base-ui' && page === 'typography'">
 							Typography
 						</a>
-					</li>  
+					</li>
 					<li>
-						<a 
-							[routerLink]="'base-ui/video'" 
+						<a
+							[routerLink]="'base-ui/video'"
 								[class.active] = "base === 'base-ui' && page === 'video'">
 							Videos
 						</a>
-					</li>  
+					</li>
 				</ul>
 				</li>
 				<li class="submenu"
 				[class.active] = "base === 'elements' ||
 									base === 'elements' && page === 'ribbon' ||
-									base === 'elements' && page === 'clipboards' || 
+									base === 'elements' && page === 'clipboards' ||
 									base === 'elements' && page === 'drap-drop' ||
 									base === 'elements' && page === 'rating' ||
 									base === 'elements' && page === 'text-editor' ||
 									base === 'elements' && page === 'scrollbar' ||
 									base === 'elements' && page === 'notification' ||
-									base === 'elements' && page === 'sticky-note' || 
+									base === 'elements' && page === 'sticky-note' ||
 									base === 'elements' && page === 'timeline' ||
 									base === 'elements' && page === 'horizontal' ||
 									base === 'elements' && page === 'form-wizard'
@@ -626,11 +630,11 @@
 				<li class="submenu"
 					[class.active] = "base === 'charts' ||
 									base === 'charts' && page === 'apexcharts' ||
-									base === 'charts' && page === 'chartjs' || 
+									base === 'charts' && page === 'chartjs' ||
 									base === 'charts' && page === 'morrischarts' ||
 									base === 'charts' && page === 'flotcharts' ||
 									base === 'charts' && page === 'peitycharts' ||
-									base === 'charts' && page === 'c3charts' 
+									base === 'charts' && page === 'c3charts'
 				">
 					<a href="#"><i data-feather="bar-chart-2"></i> <span> Charts </span> <span class="menu-arrow"></span></a>
 					<ul>
@@ -673,8 +677,8 @@
 					</ul>
 				</li>
 				<li class="submenu"
-					[class.active] = "base === 'icons' || 
-								  base === 'icons' && page === 'fontawesome' || 
+					[class.active] = "base === 'icons' ||
+								  base === 'icons' && page === 'fontawesome' ||
 								  base === 'icons' && page === 'feathers' ||
 								  base === 'icons' && page === 'ionic' ||
 								  base === 'icons' && page === 'material' ||

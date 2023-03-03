@@ -20,42 +20,47 @@ const routes: Routes = [
         canActivate: [AuthenticationGuard],
 
       },
-  {
-    path: 'dashboard-two',
-    loadChildren: () =>
-    import('./dashboards/dashboard-two/dashboard-two.module').then(m => m.DashboardTwoModule),
-    canActivate: [AuthenticationGuard],
-  },
-  {
-    path: 'dashboard-three',
-    loadChildren: () => import('./dashboards/dashboard-three/dashboard-three.module').then(m => m.DashboardThreeModule),
-    canActivate: [AuthenticationGuard],
-  },
-  {
-    path: 'dashboard-four',
-    loadChildren: () =>
-    import('./dashboards/dashboard-four/dashboard-four.module').then(m => m.DashboardFourModule),
-    canActivate: [AuthenticationGuard],
-  },
-  {
-    path: 'dashboard-five',
-    loadChildren: () =>
-    import('./dashboards/dashboard-five/dashboard-five.module').then(m => m.DashboardFiveModule),
-    canActivate: [AuthenticationGuard],
-  },
+      {
+        path: 'gestion-inquilinos',
+        loadChildren: () =>
+        import('./gestion-inquilinos/gestion-inquilinos.module').then((m) => m.GestionInquilinosModule)
+      },
+      {
+        path: 'dashboard-two',
+        loadChildren: () =>
+        import('./dashboards/dashboard-two/dashboard-two.module').then(m => m.DashboardTwoModule),
+        canActivate: [AuthenticationGuard],
+      },
+      {
+        path: 'dashboard-three',
+        loadChildren: () => import('./dashboards/dashboard-three/dashboard-three.module').then(m => m.DashboardThreeModule),
+        canActivate: [AuthenticationGuard],
+      },
+      {
+        path: 'dashboard-four',
+        loadChildren: () =>
+        import('./dashboards/dashboard-four/dashboard-four.module').then(m => m.DashboardFourModule),
+        canActivate: [AuthenticationGuard],
+      },
+      {
+        path: 'dashboard-five',
+        loadChildren: () =>
+        import('./dashboards/dashboard-five/dashboard-five.module').then(m => m.DashboardFiveModule),
+        canActivate: [AuthenticationGuard],
+      },
       {
           path: 'customers',
           loadChildren: () =>
             import('./customers/customers.module').then((m) => m.CustomersModule),
           canActivate: [AuthenticationGuard],
 
-        },
-        {
-          path: 'estimates',
-          loadChildren: () =>
-            import('./estimates/estimates.module').then((m) => m.EstimatesModule),
-          canActivate: [AuthenticationGuard],
-        },
+      },
+      {
+        path: 'estimates',
+        loadChildren: () =>
+          import('./estimates/estimates.module').then((m) => m.EstimatesModule),
+        canActivate: [AuthenticationGuard],
+      },
         {
           path: 'invoices',
           loadChildren: () =>
@@ -223,67 +228,67 @@ const routes: Routes = [
           canActivate: [AuthenticationGuard],
 
         },
-        { 
-          path: 'base-ui', 
-          loadChildren: () => 
+        {
+          path: 'base-ui',
+          loadChildren: () =>
             import('./ui interface/base-ui/base-ui.module').then(
               (m) => m.BaseUiModule
-            ), 
+            ),
             canActivate: [AuthenticationGuard],
         },
-        { 
-          path: 'icons', 
-          loadChildren: () => 
+        {
+          path: 'icons',
+          loadChildren: () =>
             import('./ui interface/icons/icons.module').then(
               (m) => m.IconsModule
               ),
-              canActivate: [AuthenticationGuard], 
+              canActivate: [AuthenticationGuard],
         },
-        { 
-          path: 'charts', 
-          loadChildren: () => 
+        {
+          path: 'charts',
+          loadChildren: () =>
             import('./ui interface/charts/charts.module').then(
               (m) => m.ChartsModule
               ),
-              canActivate: [AuthenticationGuard], 
+              canActivate: [AuthenticationGuard],
         },
-        { 
-          path: 'elements', 
-          loadChildren: () => 
+        {
+          path: 'elements',
+          loadChildren: () =>
             import('./ui interface/elements/elements.module').then(
               (m) => m.ElementsModule
               ),
-              canActivate: [AuthenticationGuard], 
+              canActivate: [AuthenticationGuard],
         },
-        { 
-          path: 'blog', 
-          loadChildren: () => 
+        {
+          path: 'blog',
+          loadChildren: () =>
             import('./blog/blog.module').then(
               (m) => m.BlogModule
               ),
-              canActivate: [AuthenticationGuard], 
+              canActivate: [AuthenticationGuard],
         },
-        { 
-          path: 'form-fileupload', 
-          loadChildren: () => 
+        {
+          path: 'form-fileupload',
+          loadChildren: () =>
             import('./ui interface/forms/form-fileupload/form-fileupload.module').then(
-              (m) => m.FormFileuploadModule) 
+              (m) => m.FormFileuploadModule)
         },
-        { 
-          path: 'form-select2', 
-          loadChildren: () => 
+        {
+          path: 'form-select2',
+          loadChildren: () =>
             import('./ui interface/forms/form-select2/form-select2.module').then(
-              (m) => m.FormSelect2Module) 
+              (m) => m.FormSelect2Module)
         },
     ]
   },
-  
- 
-  
-  
-  
-  
-  
+
+
+
+
+
+
+
 ];
 
 @NgModule({
