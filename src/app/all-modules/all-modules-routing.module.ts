@@ -21,9 +21,17 @@ const routes: Routes = [
 
       },
       {
-        path: 'gestion-inquilinos',
+        path: 'inquilinos',
         loadChildren: () =>
-        import('./gestion-inquilinos/gestion-inquilinos.module').then((m) => m.GestionInquilinosModule)
+        import('./gestion-inquilinos/gestion-inquilinos.module').then((m) => m.GestionInquilinosModule),
+        canActivate: [AuthenticationGuard],
+      },
+      {
+          path: 'customers',
+          loadChildren: () =>
+            import('./customers/customers.module').then((m) => m.CustomersModule),
+          canActivate: [AuthenticationGuard],
+
       },
       {
         path: 'dashboard-two',
@@ -47,13 +55,6 @@ const routes: Routes = [
         loadChildren: () =>
         import('./dashboards/dashboard-five/dashboard-five.module').then(m => m.DashboardFiveModule),
         canActivate: [AuthenticationGuard],
-      },
-      {
-          path: 'customers',
-          loadChildren: () =>
-            import('./customers/customers.module').then((m) => m.CustomersModule),
-          canActivate: [AuthenticationGuard],
-
       },
       {
         path: 'estimates',

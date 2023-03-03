@@ -9,12 +9,11 @@ import { ToastrModule } from 'ngx-toastr';
 import { RouterModule } from '@angular/router';
 import { SidemenuComponent } from '../sidemenu/sidemenu.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { GestionInquilinosComponent } from './gestion-inquilinos/gestion-inquilinos.component';
 
 
 @NgModule({
   declarations: [
-    AllModulesComponent,SidemenuComponent, GestionInquilinosComponent
+    AllModulesComponent,SidemenuComponent
   ],
   imports: [
     CommonModule,
