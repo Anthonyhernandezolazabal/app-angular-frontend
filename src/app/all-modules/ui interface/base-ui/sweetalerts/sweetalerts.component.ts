@@ -117,7 +117,7 @@ export class SweetalertsComponent implements OnInit {
       reverseButtons: true,
       validationMessage: 'This field is required'
     })
-    
+
     const values = []
     let currentStep
     for (currentStep = 0; currentStep < steps.length;) {
@@ -127,7 +127,7 @@ export class SweetalertsComponent implements OnInit {
         showCancelButton: currentStep > 0,
         currentProgressStep: currentStep
       })
-    
+
       if (result.value) {
         values[currentStep] = result.value
         currentStep++
@@ -137,11 +137,11 @@ export class SweetalertsComponent implements OnInit {
         break
       }
     }
-    
+
     if (currentStep === steps.length) {
       Swal.fire(JSON.stringify(values))
     }
-    
+
   }
   confirmText() {
     const swalWithBootstrapButtons = Swal.mixin({
@@ -151,7 +151,7 @@ export class SweetalertsComponent implements OnInit {
       },
       buttonsStyling: false
     })
-    
+
     swalWithBootstrapButtons.fire({
       title: 'Are you sure?',
       text: "You won't be able to revert this!",
@@ -187,7 +187,7 @@ export class SweetalertsComponent implements OnInit {
       },
       buttonsStyling: false
     })
-    
+
     swalWithBootstrapButtons.fire({
       title: 'Are you sure?',
       text: "You won't be able to revert this!",

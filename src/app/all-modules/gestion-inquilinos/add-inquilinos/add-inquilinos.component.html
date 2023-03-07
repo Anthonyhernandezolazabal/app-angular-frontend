@@ -1,0 +1,121 @@
+  <!-- Page Wrapper -->
+  <div class="page-wrapper">
+    <div class="content container-fluid">
+
+      <!-- Page Header -->
+      <div class="page-header">
+        <div class="row">
+          <div class="col-sm-12">
+            <h3 class="page-title">Registro de Inquilinos</h3>
+            <ul class="breadcrumb">
+              <li class="breadcrumb-item"><a [routerLink]="'/index'">Dashboard</a></li>
+              <li class="breadcrumb-item active">Registro de inquilinos</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- /Page Header -->
+
+      <div class="row">
+        <!--  -->
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header">
+              <h5 class="card-title">Nuevo registro de Inquilinos</h5>
+            </div>
+            <div class="card-body">
+              <form (ngSubmit)="addInquilinos()" #f="ngForm">
+                <div class="form-row row">
+                  <div class="col-md-4 mb-3">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" [class]="nombre.invalid && (nombre.dirty || nombre.touched) ? 'form-control is-invalid': 'form-control'" id="nombre" name="nombre" required [(ngModel)]="inquilinos.nombre" #nombre="ngModel" placeholder="Nombre">
+                    <p>{{ nombre.invalid }} </p>
+                  </div>
+                  <div class="col-md-4 mb-3">
+                    <label for="apellidos">Apellidos</label>
+                    <input type="text" [class]="apellidos.invalid && (apellidos.dirty || apellidos.touched) ? 'form-control is-invalid': 'form-control'" id="apellidos" name="apellidos" [(ngModel)]="inquilinos.apellidos" placeholder="Apellidos" required #apellidos="ngModel">
+                  </div>
+                  <div class="col-md-4 mb-3">
+                    <label for="correo">Correo Electrónico</label>
+                    <input type="email" [class]="correo.invalid && (correo.dirty || correo.touched) ? 'form-control is-invalid': 'form-control'" #correo="ngModel" id="correo" name="correo" [(ngModel)]="inquilinos.email" placeholder="Correo Electrónico" required>
+                  </div>
+                </div>
+                <div class="form-row row">
+                  <div class="col-md-6 mb-3">
+                    <label for="contacto">Contácto</label>
+                    <input type="text" [class]="contacto.invalid && (contacto.dirty || contacto.touched) ? 'form-control is-invalid': 'form-control'" #contacto="ngModel" class="form-control" id="contacto" name="contacto" [(ngModel)]="inquilinos.celular" placeholder="N° de contacto" required="">
+                  </div>
+                  <div class="col-md-3 mb-3">
+                    <label for="sexo">Sexo</label>
+                      <select class="select form-select" id="sexo" name="sexo" required="" [(ngModel)]="inquilinos.sexo">
+                        <option value="" disabled selected>Selecciona</option>
+                        <option value="Masculino">Masculino</option>
+                        <option value="Femenino">Femenino</option>
+                      </select>
+                  </div>
+                  <div class="col-md-3 mb-3">
+                    <label for="edad">Edad</label>
+                    <input type="text" [class]="edad.invalid && (edad.dirty || edad.touched) ? 'form-control is-invalid': 'form-control'" #edad="ngModel" class="form-control" id="edad" name="edad" [(ngModel)]="inquilinos.edad" placeholder="Edad" required="">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="form-check">
+                    <input class="form-check-input" (click)="toggleWebcam();" type="checkbox" value="" id="invalidCheck" required="">
+                    <label class="form-check-label" for="invalidCheck">
+                      Tomar Foto
+                    </label>
+                  </div>
+                </div>
+                <hr>
+                <div class="d-grid">
+                    <div class="row">
+                      <div class="col-md-5"style="text-align: center;">
+                          <webcam [width]="300" [trigger]="triggerObservable" (imageCapture)="handleImage($event)" *ngIf="showWebcam"
+                                  [allowCameraSwitch]="allowCameraSwitch"
+                                  [videoOptions]="videoOptions"
+                                  [imageQuality]="1"
+                                  (cameraSwitched)="cameraWasSwitched($event)"
+                                  (initError)="handleInitError($event)"
+                          ></webcam>
+                      </div>
+
+                      <div class="col-md-1" style="margin: auto;">
+                        <button type="button" class="btn btn-block btn-outline-success actionBtn" *ngIf="showWebcam" (click)="triggerSnapshot();"><i class="fa fa-camera" aria-hidden="true"></i></button>
+                      </div>
+
+
+                      <div class="col-md-6"  *ngIf="showWebcam">
+                        <div class="snapshot" *ngIf="webcamImage" style="text-align: center;">
+                          <img [width]="300" [src]="webcamImage.imageAsDataUrl" alt="image" class="img-fluid rounded img-thumbnail">
+                        </div>
+
+                        <h4 *ngIf="errors.length > 0">Messages:</h4>
+                        <ul *ngFor="let error of errors">
+                          <li>{{error | json}}</li>
+                        </ul>
+                      </div>
+
+                    </div>
+
+
+
+
+
+
+
+
+                </div>
+                <button class="btn btn-primary" [disabled]="f.invalid" type="submit">Registrar</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+    </div>
+  </div>
+  <!-- /Page Wrapper -->
